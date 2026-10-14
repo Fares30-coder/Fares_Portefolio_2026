@@ -74,9 +74,9 @@ async function sendWithSmtp(entry) {
 
 async function sendMail(entry) {
   const { RESEND_API_KEY, SMTP_HOST, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
-  if (!CONTACT_TO) return;
-  if (RESEND_API_KEY) return sendWithResend(entry);
-  if (SMTP_HOST && SMTP_USER && SMTP_PASS) return sendWithSmtp(entry);
+  if (CONTACT_TO && RESEND_API_KEY) return sendWithResend(entry);
+  if (CONTACT_TO && SMTP_HOST && SMTP_USER && SMTP_PASS) return sendWithSmtp(entry);
+  console.warn(`Message de ${entry.email} enregistré mais NON envoyé par e-mail : aucun envoi configuré`);
 }
 
 router.post('/', limiter, async (req, res, next) => {
