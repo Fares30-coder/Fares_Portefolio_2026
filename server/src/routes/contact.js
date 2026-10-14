@@ -35,7 +35,7 @@ async function saveMessage(entry) {
 
 async function sendMail(entry) {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
-  if (!SMTP_HOST || !CONTACT_TO) return;
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !CONTACT_TO) return;
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port: Number(SMTP_PORT) || 587,

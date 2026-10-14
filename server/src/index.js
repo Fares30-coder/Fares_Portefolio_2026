@@ -32,4 +32,9 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Erreur interne du serveur' });
 });
 
-app.listen(PORT, () => console.log(`API démarrée sur http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`API démarrée sur http://localhost:${PORT}`);
+  console.log(process.env.SMTP_USER && process.env.SMTP_PASS
+    ? `E-mails de contact activés → ${process.env.CONTACT_TO}`
+    : 'E-mails de contact désactivés (SMTP_USER / SMTP_PASS vides dans server/.env)');
+});
