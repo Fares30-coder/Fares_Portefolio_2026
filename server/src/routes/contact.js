@@ -33,21 +33,50 @@ async function saveMessage(entry) {
   await writeFile(messagesUrl, JSON.stringify(messages, null, 2));
 }
 
-async function sendMail(entry) {
+function buildMail(entry) {
+  return {
+    subject: `[Portfolio] Message de ${entry.name}`,
+    text: `${entry.message}\n\n— ${entry.name} <${entry.email}>`,
+  };
+}
+
+// Resend passe par HTTPS : fonctionne sur Render (le SMTP y est bloqué en offre gratuite)
+async function sendWithResend(entry) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: process.env.RESEND_FROM || 'Portfolio <onboarding@resend.dev>',
+      to: process.env.CONTACT_TO,
+      reply_to: entry.email,
+      ...buildMail(entry),
+    }),
+    signal: AbortSignal.timeout(10_000),
+  });
+  if (!res.ok) throw new Error(`Resend ${res.status} : ${await res.text()}`);
+}
+
+async function sendWithSmtp(entry) {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !CONTACT_TO) return;
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port: Number(SMTP_PORT) || 587,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 10_000,
   });
-  await transporter.sendMail({
-    from: SMTP_USER,
-    to: CONTACT_TO,
-    replyTo: entry.email,
-    subject: `[Portfolio] Message de ${entry.name}`,
-    text: `${entry.message}\n\n— ${entry.name} <${entry.email}>`,
-  });
+  await transporter.sendMail({ from: SMTP_USER, to: CONTACT_TO, replyTo: entry.email, ...buildMail(entry) });
+}
+
+async function sendMail(entry) {
+  const { RESEND_API_KEY, SMTP_HOST, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
+  if (!CONTACT_TO) return;
+  if (RESEND_API_KEY) return sendWithResend(entry);
+  if (SMTP_HOST && SMTP_USER && SMTP_PASS) return sendWithSmtp(entry);
 }
 
 router.post('/', limiter, async (req, res, next) => {

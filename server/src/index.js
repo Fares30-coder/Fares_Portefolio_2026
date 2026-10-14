@@ -36,7 +36,9 @@ app.use((err, _req, res, _next) => {
 
 app.listen(PORT, () => {
   console.log(`API démarrée sur http://localhost:${PORT}`);
-  console.log(process.env.SMTP_USER && process.env.SMTP_PASS
-    ? `E-mails de contact activés → ${process.env.CONTACT_TO}`
-    : 'E-mails de contact désactivés (SMTP_USER / SMTP_PASS vides dans server/.env)');
+  const { RESEND_API_KEY, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
+  const via = RESEND_API_KEY ? 'Resend' : SMTP_USER && SMTP_PASS ? 'SMTP' : null;
+  console.log(via && CONTACT_TO
+    ? `E-mails de contact activés via ${via} → ${CONTACT_TO}`
+    : 'E-mails de contact désactivés (voir server/.env.example)');
 });
