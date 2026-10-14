@@ -12,6 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const isProd = process.env.NODE_ENV === 'production';
 
+// Derrière le proxy de l'hébergeur (Render), pour que le rate-limit voie la vraie IP du visiteur
+app.set('trust proxy', 1);
 app.use(helmet());
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
 app.use(express.json({ limit: '20kb' }));
