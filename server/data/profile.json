@@ -1,0 +1,115 @@
+{
+  "name": "Fares Haouari",
+  "title": "Développeur Logiciel · React / Node.js / Flutter",
+  "tagline": "Récemment diplômé d'Epitech (Bac+5), je conçois des applications web et mobiles robustes, testées et pensées pour l'utilisateur. Je recherche un CDI en développement logiciel à Lille et dans le Nord-Pas-de-Calais.",
+  "location": "Lille · Nord-Pas-de-Calais",
+  "availability": "Disponible pour un CDI",
+  "email": "fares.haouari@epitech.eu",
+  "links": {
+    "github": "https://github.com/Fares30-coder",
+    "linkedin": "https://www.linkedin.com/in/fares-haouari/",
+    "cv": "/cv.pdf"
+  },
+  "about": [
+    "Récemment diplômé d'Epitech après un parcours mêlant développement web, mobile et projets internationaux, j'ai eu l'occasion de travailler sur des applications en React, Flutter et Node.js au sein de startups et de grands groupes.",
+    "Ce qui m'anime, c'est de concevoir des solutions concrètes, travailler en équipe sur des projets ambitieux et continuer à progresser techniquement dans des environnements stimulants.",
+    "Aujourd'hui, je recherche un CDI en développement logiciel où je puisse m'investir sur le long terme et contribuer activement à des projets à fort impact."
+  ],
+  "skills": [
+    { "category": "Front-end & Mobile", "items": ["React JS", "TypeScript", "Flutter", "React Native", "Redux", "WordPress"] },
+    { "category": "Back-end & API", "items": ["Node.js", "API REST", "GraphQL", "Firebase", "Python", "C++"] },
+    { "category": "DevOps & Tests", "items": ["Docker", "Kubernetes", "CI/CD", "Azure DevOps", "Cypress", "Jest", "SonarQube", "Postman", "Linux", "Git"] },
+    { "category": "Méthodes", "items": ["Agile / Scrum", "Code Review", "Tests automatisés", "Travail collaboratif avec Git"] },
+    { "category": "Langues", "items": ["Français (natif)", "Anglais (775/900, équiv. TOEIC)", "Allemand (B1)"] }
+  ],
+  "experiences": [
+    {
+      "role": "Développeur Front-End — Stage de fin d'études",
+      "company": "AXA, Wasquehal",
+      "period": "2025",
+      "description": [
+        "Migration de pages Angular vers React.js et développement de composants réutilisables dans le respect de la logique métier existante",
+        "Développement de nouvelles fonctionnalités à partir des besoins des Product Owners et amélioration de l'expérience utilisateur",
+        "Mise en place de tests end-to-end avec Cypress et de tests unitaires avec Jest",
+        "Mise en place et suivi de pipelines CI/CD sur Azure DevOps ; suivi de la qualité du code avec SonarQube, avec une couverture de tests de 87 %",
+        "Collaboration via Git / Pull Requests, code reviews, Daily Stand-ups, Sprint Reviews et PI Planning",
+        "Travail en Agile Scrum au sein d'un environnement international"
+      ],
+      "stack": ["React", "Angular", "Cypress", "Jest", "Azure DevOps", "SonarQube"]
+    },
+    {
+      "role": "Développeur Mobile — Stage",
+      "company": "Bizi App",
+      "period": "2023",
+      "description": [
+        "Développement d'une application mobile iOS & Android avec React Native, à partir de maquettes Figma",
+        "Conception et intégration de composants UI : carrousel d'événements, système de favoris et données profil",
+        "Gestion de l'état global avec Redux",
+        "Intégration d'API GraphQL connectées à un back-end Node.js",
+        "Développement et rédaction de tests fonctionnels pour les nouvelles fonctionnalités",
+        "Collaboration via Git / Pull Requests en méthodologie Agile au sein d'une startup"
+      ],
+      "stack": ["React Native", "Redux", "GraphQL", "Node.js", "Figma"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AREA",
+      "context": "Projet en équipe · Epitech Lille · 2023",
+      "description": "Plateforme d'automatisation type IFTTT / Zapier interconnectant des services tiers (Google, GitHub, Gmail…).",
+      "highlights": [
+        "Architecture microservices : serveur applicatif (REST API), client web et client mobile",
+        "Système Action-REAction avec hooks déclenchant automatiquement les REActions",
+        "Authentification OAuth2 et gestion de compte",
+        "Client mobile en Flutter, client web en React JS / Node.js",
+        "Déploiement et orchestration via Docker Compose",
+        "Documentation technique : README, diagrammes de classes et de séquence, HOWTOCONTRIBUTE.md"
+      ],
+      "stack": ["React", "Node.js", "Flutter", "OAuth2", "Docker Compose"],
+      "repo": "",
+      "demo": ""
+    },
+    {
+      "name": "Redditech",
+      "context": "Epitech Lille · 2023",
+      "description": "Application mobile de navigation Reddit développée en Flutter.",
+      "highlights": [
+        "Intégration de l'API Reddit via OAuth2",
+        "Feed personnalisé avec filtres (hot, new, top, best…)",
+        "Recherche de subreddits, abonnement / désabonnement, profil et paramètres utilisateur",
+        "Pagination des listings et affichage de contenus multimédias (vidéos, GIFs, images)",
+        "Architecture logicielle, UX/UI, documentation technique et stratégie de tests"
+      ],
+      "stack": ["Flutter", "Dart", "OAuth2", "API REST"],
+      "repo": "",
+      "demo": ""
+    },
+    {
+      "name": "Portfolio 2026",
+      "context": "Projet personnel · 2026",
+      "description": "Ce portfolio : front React (Vite) et API Node.js / Express servant le contenu du CV et le formulaire de contact.",
+      "highlights": [],
+      "stack": ["React", "Vite", "Node.js", "Express"],
+      "repo": "https://github.com/Fares30-coder/Fares_Portefolio_2026",
+      "demo": ""
+    }
+  ],
+  "education": [
+    {
+      "degree": "Expert de l'Informatique et de l'Information — Programme Grande École, Bac+5 (RNCP niveau 7)",
+      "school": "Epitech Lille",
+      "period": "2019 — 2025"
+    },
+    {
+      "degree": "Expert en Ingénierie Logicielle",
+      "school": "Epitech Paris",
+      "period": "2023 — 2024"
+    },
+    {
+      "degree": "Année d'études internationale — Informatique, management et économie",
+      "school": "California State University, Long Beach",
+      "period": "2023 — 2024"
+    }
+  ],
+  "interests": ["Judo (ceinture bleue)", "Football (niveau District)", "MMA", "Jeu vidéo"]
+}
