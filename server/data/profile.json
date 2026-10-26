@@ -1,9 +1,9 @@
 {
   "name": "Fares Haouari",
-  "title": "Développeur Logiciel · React / Node.js / Flutter",
-  "tagline": "Récemment diplômé d'Epitech (Bac+5), je conçois des applications web et mobiles robustes, testées et pensées pour l'utilisateur. Je recherche un CDI en développement logiciel à Lille et dans le Nord-Pas-de-Calais.",
-  "location": "Lille · Nord-Pas-de-Calais",
-  "availability": "Disponible pour un CDI",
+  "title": "Développeur Full-Stack · React / Node.js / Flutter",
+  "tagline": "Diplômé d'Epitech (Bac+5), je conçois des applications web et mobiles robustes, testées et pensées pour l'utilisateur. Disponible dès maintenant pour vos missions freelance à Lille et à distance, et ouvert à un CDI dans les Hauts-de-France.",
+  "location": "Lille · Hauts-de-France",
+  "availability": "Disponible en freelance · Ouvert à un CDI",
   "email": "fares.haouari@epitech.eu",
   "links": {
     "github": "https://github.com/Fares30-coder",
@@ -13,14 +13,61 @@
   "about": [
     "Récemment diplômé d'Epitech après un parcours mêlant développement web, mobile et projets internationaux, j'ai eu l'occasion de travailler sur des applications en React, Flutter et Node.js au sein de startups et de grands groupes.",
     "Ce qui m'anime, c'est de concevoir des solutions concrètes, travailler en équipe sur des projets ambitieux et continuer à progresser techniquement dans des environnements stimulants.",
-    "Aujourd'hui, je recherche un CDI en développement logiciel où je puisse m'investir sur le long terme et contribuer activement à des projets à fort impact."
+    "Aujourd'hui, j'accompagne entreprises et indépendants en freelance sur leurs projets web et mobiles, tout en restant ouvert à un CDI où m'investir sur le long terme."
   ],
   "skills": [
-    { "category": "Front-end & Mobile", "items": ["React JS", "TypeScript", "Flutter", "React Native", "Redux", "WordPress"] },
-    { "category": "Back-end & API", "items": ["Node.js", "API REST", "GraphQL", "Firebase", "Python", "C++"] },
-    { "category": "DevOps & Tests", "items": ["Docker", "Kubernetes", "CI/CD", "Azure DevOps", "Cypress", "Jest", "SonarQube", "Postman", "Linux", "Git"] },
-    { "category": "Méthodes", "items": ["Agile / Scrum", "Code Review", "Tests automatisés", "Travail collaboratif avec Git"] },
-    { "category": "Langues", "items": ["Français (natif)", "Anglais (775/900, équiv. TOEIC)", "Allemand (B1)"] }
+    {
+      "category": "Front-end & Mobile",
+      "items": [
+        "React JS",
+        "TypeScript",
+        "Flutter",
+        "React Native",
+        "Redux"
+      ]
+    },
+    {
+      "category": "Back-end & API",
+      "items": [
+        "Node.js",
+        "API REST",
+        "GraphQL",
+        "Firebase",
+        "Python"
+      ]
+    },
+    {
+      "category": "DevOps & Tests",
+      "items": [
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Azure DevOps",
+        "Cypress",
+        "Jest",
+        "SonarQube",
+        "Postman",
+        "Linux",
+        "Git"
+      ]
+    },
+    {
+      "category": "Méthodes",
+      "items": [
+        "Agile / Scrum",
+        "Code Review",
+        "Tests automatisés",
+        "Travail collaboratif avec Git"
+      ]
+    },
+    {
+      "category": "Langues",
+      "items": [
+        "Français (natif)",
+        "Anglais (775/900, équiv. TOEIC)",
+        "Allemand (B1)"
+      ]
+    }
   ],
   "experiences": [
     {
@@ -35,7 +82,14 @@
         "Collaboration via Git / Pull Requests, code reviews, Daily Stand-ups, Sprint Reviews et PI Planning",
         "Travail en Agile Scrum au sein d'un environnement international"
       ],
-      "stack": ["React", "Angular", "Cypress", "Jest", "Azure DevOps", "SonarQube"]
+      "stack": [
+        "React",
+        "Angular",
+        "Cypress",
+        "Jest",
+        "Azure DevOps",
+        "SonarQube"
+      ]
     },
     {
       "role": "Développeur Mobile — Stage",
@@ -49,7 +103,13 @@
         "Développement et rédaction de tests fonctionnels pour les nouvelles fonctionnalités",
         "Collaboration via Git / Pull Requests en méthodologie Agile au sein d'une startup"
       ],
-      "stack": ["React Native", "Redux", "GraphQL", "Node.js", "Figma"]
+      "stack": [
+        "React Native",
+        "Redux",
+        "GraphQL",
+        "Node.js",
+        "Figma"
+      ]
     }
   ],
   "projects": [
@@ -58,40 +118,54 @@
       "context": "Projet en équipe · Epitech Lille · 2023",
       "description": "Plateforme d'automatisation type IFTTT / Zapier interconnectant des services tiers (Google, GitHub, Gmail…).",
       "highlights": [
-        "Architecture microservices : serveur applicatif (REST API), client web et client mobile",
-        "Système Action-REAction avec hooks déclenchant automatiquement les REActions",
-        "Authentification OAuth2 et gestion de compte",
-        "Client mobile en Flutter, client web en React JS / Node.js",
-        "Déploiement et orchestration via Docker Compose",
-        "Documentation technique : README, diagrammes de classes et de séquence, HOWTOCONTRIBUTE.md"
+        "Architecture microservices : API REST, client web React et client mobile Flutter",
+        "Moteur Action-REAction déclenchant automatiquement des actions entre services",
+        "Authentification OAuth2 et déploiement via Docker Compose"
       ],
-      "stack": ["React", "Node.js", "Flutter", "OAuth2", "Docker Compose"],
+      "stack": [
+        "React",
+        "Node.js",
+        "Flutter",
+        "OAuth2",
+        "Docker Compose"
+      ],
       "repo": "",
-      "demo": ""
+      "demo": "",
+      "image": ""
     },
     {
       "name": "Redditech",
       "context": "Epitech Lille · 2023",
       "description": "Application mobile de navigation Reddit développée en Flutter.",
       "highlights": [
-        "Intégration de l'API Reddit via OAuth2",
-        "Feed personnalisé avec filtres (hot, new, top, best…)",
-        "Recherche de subreddits, abonnement / désabonnement, profil et paramètres utilisateur",
-        "Pagination des listings et affichage de contenus multimédias (vidéos, GIFs, images)",
-        "Architecture logicielle, UX/UI, documentation technique et stratégie de tests"
+        "Connexion au compte Reddit via OAuth2",
+        "Feed personnalisé avec filtres (hot, new, top…) et pagination",
+        "Affichage de contenus multimédias : vidéos, GIFs, images"
       ],
-      "stack": ["Flutter", "Dart", "OAuth2", "API REST"],
+      "stack": [
+        "Flutter",
+        "Dart",
+        "OAuth2",
+        "API REST"
+      ],
       "repo": "",
-      "demo": ""
+      "demo": "",
+      "image": ""
     },
     {
       "name": "Portfolio 2026",
       "context": "Projet personnel · 2026",
       "description": "Ce portfolio : front React (Vite) et API Node.js / Express servant le contenu du CV et le formulaire de contact.",
       "highlights": [],
-      "stack": ["React", "Vite", "Node.js", "Express"],
+      "stack": [
+        "React",
+        "Vite",
+        "Node.js",
+        "Express"
+      ],
       "repo": "https://github.com/Fares30-coder/Fares_Portefolio_2026",
-      "demo": ""
+      "demo": "",
+      "image": ""
     }
   ],
   "education": [
@@ -111,5 +185,24 @@
       "period": "2023 — 2024"
     }
   ],
-  "interests": ["Judo (ceinture bleue)", "Football (niveau District)", "MMA", "Jeu vidéo"]
+  "interests": [
+    "Judo (ceinture bleue)",
+    "Football (niveau District)",
+    "MMA",
+    "Jeu vidéo"
+  ],
+  "services": [
+    {
+      "title": "Sites & applications web",
+      "description": "De la maquette à la mise en ligne : site vitrine, application React, API Node.js, formulaire, back-office."
+    },
+    {
+      "title": "Applications mobiles",
+      "description": "Applications iOS & Android en Flutter ou React Native, connectées à vos API et services."
+    },
+    {
+      "title": "Modernisation & qualité",
+      "description": "Migration vers React, tests automatisés (Jest, Cypress), mise en place de CI/CD pour livrer sereinement."
+    }
+  ]
 }

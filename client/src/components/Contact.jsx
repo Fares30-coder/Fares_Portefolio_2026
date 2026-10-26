@@ -37,7 +37,7 @@ export default function Contact({ email, links }) {
   return (
     <Section id="contact" title="Contact">
       <p className="lead">
-        Un poste en CDI à pourvoir ? Écrivez-moi via ce formulaire ou directement à{' '}
+        Une mission freelance ou un poste à pourvoir ? Écrivez-moi via ce formulaire ou directement à{' '}
         <a href={`mailto:${email}`}>{email}</a>.
       </p>
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
