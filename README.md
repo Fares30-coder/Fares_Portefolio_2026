@@ -4,7 +4,7 @@
 
 Mon portfolio / CV en ligne, développé en full-stack JavaScript : un front **React** et une API **Node.js / Express** qui sert le contenu du CV et gère le formulaire de contact.
 
-> Développeur logiciel diplômé d'Epitech (Bac+5), à la recherche d'un CDI à Lille et dans le Nord-Pas-de-Calais.
+> Développeur Full-Stack diplômé d'Epitech (Bac+5), disponible en freelance et ouvert à un CDI à Lille et dans les Hauts-de-France.
 > [LinkedIn](https://www.linkedin.com/in/fares-haouari/) · fares.haouari@epitech.eu
 
 ## Stack

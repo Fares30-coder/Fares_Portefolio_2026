@@ -31,7 +31,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -148,3 +148,38 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 .bullets li { margin-bottom: 4px; }
 .card .period { display: block; font-size: 0.85rem; color: var(--muted); margin: -6px 0 10px; }
 .subtitle { font-size: 1rem; margin: 24px 0 12px; }
+
+/* Freelance */
+.service-index { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.85rem; color: var(--accent); margin-bottom: 8px; }
+.service p { margin-bottom: 0; }
+
+/* Visuel des projets */
+.project-visual {
+  display: block; width: calc(100% + 44px); aspect-ratio: 16 / 9; margin: -22px -22px 18px;
+  border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); object-fit: cover;
+}
+.project-cover {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px;
+  padding: 18px 20px; overflow: hidden;
+  background:
+    linear-gradient(color-mix(in srgb, var(--border) 45%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, color-mix(in srgb, var(--border) 45%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--bg);
+}
+.project-cover { --cover: var(--accent); }
+.project-cover[data-variant='1'] { --cover: #22c3a6; }
+.project-cover[data-variant='2'] { --cover: #f59e0b; }
+.project-cover[data-variant='1'], .project-cover[data-variant='2'] {
+  background:
+    linear-gradient(color-mix(in srgb, var(--border) 45%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, color-mix(in srgb, var(--border) 45%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(135deg, color-mix(in srgb, var(--cover) 18%, transparent), transparent 70%), var(--bg);
+}
+.cover-dots { position: absolute; top: 14px; left: 18px; display: flex; gap: 6px; }
+.cover-dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.cover-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.8rem; line-height: 1.7;
+  color: var(--muted); white-space: pre; overflow: hidden; margin: 0;
+}
+.cover-code .kw { color: var(--cover, var(--accent)); }
+.cover-code .str { color: var(--text); }
