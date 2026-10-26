@@ -1,6 +1,6 @@
 # Portfolio — Fares Haouari
 
-**🔗 En ligne : [fares-portefolio-2026.onrender.com](https://fares-portefolio-2026.onrender.com)**
+**🔗 En ligne : [fareshaouari.fr](https://fareshaouari.fr)** · API : [fares-portefolio-2026.onrender.com](https://fares-portefolio-2026.onrender.com/api/health)
 
 Mon portfolio / CV en ligne, développé en full-stack JavaScript : un front **React** et une API **Node.js / Express** qui sert le contenu du CV et gère le formulaire de contact.
 
