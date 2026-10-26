@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Section from './Section.jsx';
+import { apiUrl } from '../api.js';
 
 const EMPTY = { name: '', email: '', message: '', website: '' };
 
@@ -15,7 +16,7 @@ export default function Contact({ email, links }) {
     setStatus('sending');
     setErrors({});
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(apiUrl('/api/contact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
