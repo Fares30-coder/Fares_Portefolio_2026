@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { fetchProfile } from './api.js';
+import BootScreen from './components/BootScreen.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
@@ -13,15 +15,14 @@ export default function App() {
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-    fetch('/api/profile')
-      .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-      .then(setProfile)
-      .catch(() => setError(true));
+  const load = useCallback(() => {
+    setError(false);
+    fetchProfile().then(setProfile).catch(() => setError(true));
   }, []);
 
-  if (error) return <p className="status">Impossible de charger le profil. Le serveur est-il lancé ?</p>;
-  if (!profile) return <p className="status">Chargement…</p>;
+  useEffect(load, [load]);
+
+  if (!profile) return <BootScreen key={String(error)} failed={error} onRetry={load} />;
 
   return (
     <>

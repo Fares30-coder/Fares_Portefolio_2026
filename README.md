@@ -1,6 +1,6 @@
 # Portfolio — Fares Haouari
 
-**🔗 En ligne : [fares-portefolio-2026.onrender.com](https://fares-portefolio-2026.onrender.com)**
+**🔗 En ligne : [fareshaouari.fr](https://fareshaouari.fr)** · API : [fares-portefolio-2026.onrender.com](https://fares-portefolio-2026.onrender.com/api/health)
 
 Mon portfolio / CV en ligne, développé en full-stack JavaScript : un front **React** et une API **Node.js / Express** qui sert le contenu du CV et gère le formulaire de contact.
 
@@ -14,7 +14,7 @@ Mon portfolio / CV en ligne, développé en full-stack JavaScript : un front **R
 | Front | React 18, Vite, CSS (thème clair / sombre, responsive) |
 | Back | Node.js, Express, Helmet, express-rate-limit |
 | E-mails | Resend (API HTTPS) en production, SMTP / Nodemailer en local |
-| Hébergement | Render — un seul service qui sert l'API et le front compilé |
+| Hébergement | Front sur OVH (déployé par GitHub Actions), API sur Render |
 
 ## Fonctionnalités
 
@@ -63,12 +63,23 @@ Sans configuration e-mail, les messages sont seulement enregistrés dans `server
 | GET | `/api/profile` | Renvoie le contenu du CV |
 | POST | `/api/contact` | Reçoit un message `{ name, email, message }` |
 
-## Déploiement (Render)
+## Déploiement
 
-Web Service Node relié à ce dépôt, redéployé automatiquement à chaque push sur `main` :
+Le front et l'API sont hébergés séparément :
 
-- **Build** : `npm install; npm run build` (installe server + client, puis compile le front)
-- **Start** : `npm start` (Express sert l'API et `client/dist` sur le même port)
-- **Variables** : `CONTACT_TO` et `RESEND_API_KEY`
+| Partie | Hébergement | Déploiement |
+|---|---|---|
+| Front React | OVH (hébergement Start 10M) | GitHub Actions → FTP, à chaque push sur `main` touchant `client/` |
+| API Express | Render (Web Service gratuit) | automatique à chaque push sur `main` |
+
+L'API gratuite de Render s'endort après 15 min d'inactivité : le front, toujours disponible, affiche un écran d'attente façon terminal et réessaie jusqu'au réveil de l'API.
+
+**GitHub Actions** (`.github/workflows/deploy-ovh.yml`) — à configurer dans *Settings → Secrets and variables → Actions* :
+- secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` (identifiants FTP de l'hébergement OVH)
+- variable `VITE_API_URL` : adresse de l'API Render
+
+**Render** :
+- **Build** : `npm install; npm run build` · **Start** : `npm start`
+- **Variables** : `CONTACT_TO`, `RESEND_API_KEY` et `CLIENT_ORIGIN` (adresses du front autorisées, séparées par des virgules)
 
 Le SMTP sortant est bloqué sur l'offre gratuite de Render, d'où l'envoi via l'API HTTPS de Resend en production.

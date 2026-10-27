@@ -42,7 +42,6 @@ a:hover { text-decoration: underline; }
 
 main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-.status { text-align: center; padding: 40vh 20px; color: var(--muted); }
 .muted { color: var(--muted); font-weight: 400; }
 
 /* Navbar */
@@ -183,3 +182,29 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 }
 .cover-code .kw { color: var(--cover, var(--accent)); }
 .cover-code .str { color: var(--text); }
+
+/* Écran d'attente (réveil de l'API) */
+.boot { min-height: 100vh; display: grid; place-items: center; padding: 20px; }
+.boot-window {
+  width: min(560px, 100%); background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+.boot-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.boot-bar .cover-dots { position: static; }
+.boot-title { font-size: 0.8rem; color: var(--muted); }
+.boot-body {
+  margin: 0; padding: 20px; min-height: 170px; white-space: pre-wrap;
+  font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.85rem; line-height: 1.8; color: var(--muted);
+}
+.boot-line { animation: boot-in 0.35s ease-out; }
+.boot-line:first-child { color: var(--accent); }
+.boot-error { color: var(--error); }
+.boot-cursor { color: var(--accent); animation: boot-blink 1s steps(1) infinite; }
+.boot-progress { height: 3px; background: var(--border); }
+.boot-progress span { display: block; height: 100%; background: var(--accent); transition: width 0.25s linear; }
+.boot-retry { margin: 0 20px 20px; }
+@keyframes boot-in { from { opacity: 0; transform: translateY(4px); } }
+@keyframes boot-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .boot-line, .boot-cursor { animation: none; }
+}
