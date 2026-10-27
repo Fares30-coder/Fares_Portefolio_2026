@@ -48,3 +48,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: client/dist/
           server-dir: www/ # dossier racine du site sur l'hébergement OVH
+          port: 21
+          protocol: ftp
+          timeout: 120000 # 2 min : la connexion depuis GitHub vers OVH peut être lente
+          log-level: verbose # journal détaillé pour diagnostiquer en cas d'échec
